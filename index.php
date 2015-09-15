@@ -14,6 +14,13 @@
 				<input type="password" name="pass" placeholder="Password">
 				<input type="submit" name="login" class="login login-submit" value="login">
 			</form>
+			<div class="login-help">
+			<?php if(isset($_COOKIE["user"]))
+			{
+				setcookie ("User", "", time() - 3600);
+				echo("No user named ".$_COOKIE["user"]); 
+			}?>
+			</div>
 		</div>
 	</body>
 </html>

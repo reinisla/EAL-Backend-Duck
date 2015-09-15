@@ -1,13 +1,18 @@
 <?php
 if(isset($_POST["user"]) && isset($_POST["pass"])){
+	setcookie("user", $_POST["user"]);
+	
 	if($_POST["user"] == "Person" && $_POST["pass"] == "Secret"){
-		echo("Successful login");
+		header("Location: main.php");
+		exit();
 	}
 	else{
-		echo("Wrong user or password");
+		header("Location: index.php");
+		exit();
 	}
 }
 else{
-	echo("No post information");
+	header("Location: index.php");
+	exit();
 }
 ?>
