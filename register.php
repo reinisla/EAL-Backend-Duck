@@ -7,8 +7,9 @@ if(isset($_POST["newuser"]) && isset($_POST["newpass"])){
 	if ($filehandle){
 		$line;
 		while ($line =fgets($filehandle)){		
-			$line = trim($line);
-			$comparetext = $_POST["newuser"]."=".$_POST["newpass"];
+			$line = trim(explode("=",$line)[0]);
+			
+			$comparetext = $_POST["newuser"];
 			if ($line == $comparetext ){
 				fclose ($filehandle);
 				setcookie("newuser", $_POST["newuser"]);

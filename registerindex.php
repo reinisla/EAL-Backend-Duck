@@ -19,7 +19,7 @@
 			{
 				setcookie ("newuser", "", time() - 3600);
 				//If user and pass is taken display message
-				echo("Username and password is taken! "); 
+				echo("Username is taken! "); 
 			}?>
 			</div>
 		</div>
